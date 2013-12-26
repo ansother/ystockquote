@@ -38,6 +38,7 @@ setup(
     download_url='http://pypi.python.org/pypi/ystockquote',
     keywords='stocks stockmarket market finance yahoo quotes'.split(),
     license='GNU LGPLv2+',
+    install_requires=['python-dateutil >= 2.2'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

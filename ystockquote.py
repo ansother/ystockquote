@@ -15,6 +15,8 @@
 
 __version__ = '0.2.5dev'
 
+from dateutil.parser import parse
+
 try:
     # py3
     from urllib.request import Request, urlopen
@@ -489,7 +491,7 @@ def get_historical_prices(symbol, start_date, end_date):
     keys = daily_data[0].split(',')
     for day in daily_data[1:]:
         day_data = day.split(',')
-        date = day_data[0]
+        date = parse(day_data[0]).date()
         hist_dict[date] = \
             {keys[1]: day_data[1],
              keys[2]: day_data[2],
