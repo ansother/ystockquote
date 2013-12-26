@@ -464,11 +464,15 @@ def get_short_ratio(symbol):
 def get_historical_prices(symbol, start_date, end_date):
     """
     Get historical prices for the given ticker symbol.
-    Date format is 'YYYY-MM-DD'
+    Date format is 'YYYY-MM-DD' or datetime.date()
 
     Returns a nested dictionary (dict of dicts).
     outer dict keys are dates ('YYYY-MM-DD')
     """
+
+    start_date = str(start_date)
+    end_date = str(end_date)
+
     params = urlencode({
         's': symbol,
         'a': int(start_date[5:7]) - 1,
