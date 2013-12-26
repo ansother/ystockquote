@@ -491,10 +491,10 @@ def get_historical_prices(symbol, start_date, end_date):
         day_data = day.split(',')
         date = day_data[0]
         hist_dict[date] = \
-            {keys[1]: day_data[1],
-             keys[2]: day_data[2],
-             keys[3]: day_data[3],
-             keys[4]: day_data[4],
-             keys[5]: day_data[5],
-             keys[6]: day_data[6]}
+            {keys[1]: float(day_data[1]),
+             keys[2]: float(day_data[2]),
+             keys[3]: float(day_data[3]),
+             keys[4]: float(day_data[4]),
+             keys[5]: float(day_data[5]),
+             keys[6]: float(day_data[6])}
     return hist_dict
